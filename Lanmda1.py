@@ -1,4 +1,6 @@
 import time
+from datetime import datetime, timedelta
+
 
 a=lambda x, s: [x + s, x,s]
 print(a(2, 3))
@@ -21,10 +23,11 @@ def dekorator_funkcja(funkcja_udekorowana):
     def funkcja_dekorujaca():
         print("To jest gorna czesc dekoratora przed wywolaniem udekorowanej funcji")
         start = time.time()
-        funkcja_udekorowana()
+        result = funkcja_udekorowana()
         print("To jest dolna czesc dekoratora.")
         end = time.time()
         print("Czas wykonania funkcji:", end - start, "sekund")
+        return result
     return funkcja_dekorujaca
 
 @dekorator_funkcja
@@ -38,6 +41,7 @@ def funkcja_udekorowana2():
     print("----------------------------")
     print("To jest funkcja udekorowana numer dwa.")
     print("----------------------------")
+    return print(f"Gotowa za: {datetime.now() + timedelta(minutes=30)}")
 
 funkcja_udekorowana()
 funkcja_udekorowana2()
