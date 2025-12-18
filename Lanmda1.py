@@ -33,4 +33,11 @@ def funkcja_udekorowana():
     print("To jest funkcja udekorowana.")
     print("----------------------------")
 
+@dekorator_funkcja
+def funkcja_udekorowana2():
+    print("----------------------------")
+    print("To jest funkcja udekorowana numer dwa.")
+    print("----------------------------")
+
 funkcja_udekorowana()
+funkcja_udekorowana2()
