@@ -21,15 +21,12 @@ def dekorator_funkcja(funkcja_udekorowana):
     def funkcja_dekorujaca():
         print("To jest gorna czesc dekoratora przed wywolaniem udekorowanej funcji")
         start = time.time()
-
         funkcja_udekorowana()
-
-        print ("To jest dolna czesc dekoratora.")
+        print("To jest dolna czesc dekoratora.")
         end = time.time()
         print("Czas wykonania funkcji:", end - start, "sekund")
+    return funkcja_dekorujaca
 
-        return funkcja_dekorujaca
-    
 @dekorator_funkcja
 def funkcja_udekorowana():
     print("----------------------------")
