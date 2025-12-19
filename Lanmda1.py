@@ -20,10 +20,10 @@ print("--------------------Ponizej sa dekoratoty -------------------------------
 print("-------------------------------------------------------------------------")
 
 def dekorator_funkcja(funkcja_udekorowana):
-    def funkcja_dekorujaca():
+    def funkcja_dekorujaca(*args):
         print("To jest gorna czesc dekoratora przed wywolaniem udekorowanej funcji")
         start = time.time()
-        result = funkcja_udekorowana()
+        result = funkcja_udekorowana(*args)
         print("To jest dolna czesc dekoratora.")
         end = time.time()
         print("Czas wykonania funkcji:", end - start, "sekund")
@@ -31,7 +31,7 @@ def dekorator_funkcja(funkcja_udekorowana):
     return funkcja_dekorujaca
 
 @dekorator_funkcja
-def funkcja_udekorowana():
+def funkcja_udekorowana(a, b):
     print("----------------------------")
     print("To jest funkcja udekorowana.")
     print("----------------------------")
@@ -43,5 +43,5 @@ def funkcja_udekorowana2():
     print("----------------------------")
     return print(f"Gotowa za: {datetime.now() + timedelta(minutes=30)}")
 
-funkcja_udekorowana()
+funkcja_udekorowana(2, "w")
 funkcja_udekorowana2()
