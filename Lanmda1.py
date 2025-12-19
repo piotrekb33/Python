@@ -23,6 +23,7 @@ def dekorator_funkcja(funkcja_udekorowana):
     def funkcja_dekorujaca(*args):
         print("To jest gorna czesc dekoratora przed wywolaniem udekorowanej funcji")
         start = time.time()
+        time.sleep(1)
         result = funkcja_udekorowana(*args)
         print("To jest dolna czesc dekoratora.")
         end = time.time()
