@@ -20,11 +20,11 @@ print("--------------------Ponizej sa dekoratoty -------------------------------
 print("-------------------------------------------------------------------------")
 
 def dekorator_funkcja(funkcja_udekorowana):
-    def funkcja_dekorujaca(*args):
+    def funkcja_dekorujaca(*pojedyncze_zmienne, **zmienne_slownik_typ_klucz_wartosc):
         print("To jest gorna czesc dekoratora przed wywolaniem udekorowanej funcji")
         start = time.time()
         time.sleep(1)
-        result = funkcja_udekorowana(*args)
+        result = funkcja_udekorowana(*pojedyncze_zmienne, **zmienne_slownik_typ_klucz_wartosc)
         print("To jest dolna czesc dekoratora.")
         end = time.time()
         print("Czas wykonania funkcji:", end - start, "sekund")
