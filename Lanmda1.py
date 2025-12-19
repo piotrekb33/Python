@@ -33,8 +33,12 @@ def dekorator_funkcja(funkcja_udekorowana):
 
 @dekorator_funkcja
 def funkcja_udekorowana(a, b):
+
+    a = "PARAMETR1 - " + str(a)
+    b = "PARAMETR2 - " + str(b)
+
     print("----------------------------")
-    print("To jest funkcja udekorowana.")
+    print(f"To jest funkcja udekorowana. Warość1: {a}, Wartość2: {b}")
     print("----------------------------")
 
 @dekorator_funkcja
